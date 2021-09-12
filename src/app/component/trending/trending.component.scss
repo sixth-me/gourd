@@ -1,0 +1,45 @@
+.trending {
+    width: 100%;
+    padding: 0 10%;
+    div > p {
+        text-align: left;
+    }
+    .item-content {
+        padding: 10px;
+        width: 30%;
+        .item-order {
+            color: rgba(230, 230, 230, 1);
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 900;
+        }
+        .item-author {
+            align-items: center;
+            flex-direction: row;
+            display: flex;
+            align-items: flex-start;
+            .item-avatar {
+                border-radius: 4px;
+            }
+            .item-name {
+                padding-left: 2px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                font-weight: 400;
+            }
+        }
+        .item-title {
+            text-overflow: ellipsis;
+            font-weight: 700;
+            font-size: 16px;
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

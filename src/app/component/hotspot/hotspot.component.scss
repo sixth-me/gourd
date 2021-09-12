@@ -1,0 +1,23 @@
+.hotspot {
+    padding-left: 30px;
+    .topic {
+        font-weight: bold;
+    }
+    .topics {
+        padding-top: 30px;
+        div {
+            padding: 20px;
+            display: inline-block;
+        }
+        .topic-item {
+            border: 0.5px solid rgba(230, 230, 230, 1);
+            border-radius: 4px;
+            background-color: azure;
+            padding: 5px 10px;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

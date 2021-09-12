@@ -1,0 +1,89 @@
+<div class="detail" fxLayoutAlign="center">
+    <div fxLayout="row" fxLayoutAlign="center" fxFlex=85>
+        <div class="nav">
+            <div *ngIf="false">
+                jv kjavnltrue
+            </div>
+            <div *ngIf="true">
+                display avatat or some other infomation
+            </div>
+        </div>
+        <div class="content" fxFlex=80>
+            <div>
+                SELECT
+                a.statistics_month AS month,
+                '家韵' AS brand,
+                b.city_name,
+                b.region_name,
+                b.circle_name,
+                b.role_name,
+                a.ca,
+                b.store_name AS shop_name,
+                b.name AS agent_name,
+                b.code AS agent_code,
+                b.job_title AS agent_level,
+                ROUND(DATEDIFF(NOW(), b.entry_date) / 30, 2) AS agent_join_time,
+                '-' AS level_type,
+                a.*,
+                IF(a.sale_house_increment * 2 > 46,
+                46,
+                a.sale_house_increment * 2) + IF(a.rent_house_increment > 15,
+                15,
+                a.rent_house_increment) AS house_wi,
+                a.sale_survey * 1.5 + a.rent_survey * 0.5 AS survey_wi,
+                a.sale_key * 3 + a.rent_key AS key_wi,
+                IF(a.sale_requirement_increment + a.new_requirement_increment > 40,
+                40,
+                a.sale_requirement_increment + a.new_requirement_increment) + IF(a.rent_requirement_increment * 0.5 >
+                10,a.sale_requirement_increment + a.new_requirement_increment) + IF(a.rent_requirement_increment * 0.5 >
+                10,a.sale_requirement_increment + a.new_requirement_increment) + IF(a.rent_requirement_increment * 0.5 > 10,
+                10,
+                a.rent_requirement_increment * 0.5) AS client_wi,
+                a.sale_visit * 4 + a.rent_visit AS visit_wi,
+                a.sale_multi_visit + a.rent_multi_visit * 0.5 AS visit_multi_wi,
+                a.sale_other_visit * 0.5 AS sale_other_visit_wi,
+                a.sale_maintain_accompany * 0.5 AS sale_maintain_accompany_wi,
+                a.new_house_visit * 4 + a.new_house_multi_visit AS new_visit_wi,
+                a.vip_visit AS vip_visit_wi,
+                IF(a.sale_empty_visit * 0.5 > 30,
+                30,
+                a.sale_empty_visit * 0.5) AS empty_visit_wi
+                FROM
+                (SELECT
+                max(a.ca) as ca,
+                a.statistics_month,
+                a.user_id,
+                SUM(a.sale_house_increment) AS sale_house_increment,
+                SUM(a.rent_house_increment) AS rent_house_increment,
+                SUM(a.sale_survey) AS sale_survey,
+                SUM(a.rent_survey) AS rent_survey,
+                SUM(a.sale_key) AS sale_key,
+                SUM(a.rent_key) AS rent_key,
+                SUM(a.sale_requirement_increment) AS sale_requirement_increment,
+                SUM(a.new_requirement_increment) AS new_requirement_increment,
+                SUM(a.sale_requirement_increment) + SUM(a.new_requirement_increment) AS sale_new_requirement_increment,
+                SUM(a.rent_requirement_increment) AS rent_requirement_increment,
+                SUM(a.sale_visit) AS sale_visit,
+                SUM(a.rent_visit) AS rent_visit,
+                SUM(a.sale_multi_visit) AS sale_multi_visit,
+                SUM(a.rent_multi_visit) AS rent_multi_visit,
+                SUM(a.sale_other_visit) AS sale_other_visit,
+                SUM(a.sale_maintain_accompany) AS sale_maintain_accompany,
+                SUM(a.vip_visit) AS vip_visit,
+                SUM(a.new_house_visit) AS new_house_visit,
+                SUM(a.new_house_multi_visit) AS new_house_multi_visit,
+                SUM(a.sale_empty_visit) AS sale_empty_visit
+                FROM
+                (SELECT
+                a.*, SUBSTR(a.statistics_date, 1, 7) AS statistics_month
+                FROM
+                jy_wi_daily_data a where SUBSTR(a.statistics_date, 1, 7) = '2021-06') a
+                GROUP BY a.statistics_month , a.user_id) a
+                INNER JOIN
+                jy_data_prod.jy_staffer_data b ON a.user_id = b.user_id
+                WHERE
+                b.job_status = 0
+            </div>
+        </div>
+    </div>
+</div>

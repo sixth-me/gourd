@@ -1,0 +1,14 @@
+@import "src/styles";
+
+footer{
+  background-color: $primary;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer >{
+  div{
+    padding: 8px 2.5px;
+  }
+}

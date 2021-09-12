@@ -1,0 +1,24 @@
+.introduction {
+    background-color: #1976d2b4;
+    width: 100%;
+    padding: 0 10%;
+    div {
+        padding: 10px 15px 0 15px;
+    }
+    button {
+        min-width: 165px;
+        line-height: 40px;
+        border-radius: 15px
+    }
+    .kuodo{
+        font-style: oblique;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: xx-large;
+        p {
+            text-align: end;
+        }
+        h2 {
+            text-align: left;
+        }
+    }
+}
