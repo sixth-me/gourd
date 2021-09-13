@@ -11,7 +11,7 @@
                     </div>
                     <div>
                         <div class="item-author">
-                            <a 
+                            <a
                                 routerLink='/account'
                                 href="https://level.medium.com/?source=home---------4---------------------b1f96f62_bb18_426d_adbf_968115a33e65-------7">
                                 <img alt="LEVEL" class="item-avatar" src="https://miro.medium.com/fit/c/30/30/1*-YtQ8mQJJWESY-UiP7Nc2A.png"
@@ -23,7 +23,7 @@
                         </div>
                         <div>
                             <h2 class="item-title">
-                                <a routerLink="/document">The Threat of Donald Trump 2.0 Is Beginning to Emerge</a>
+                                <a [routerLink]="['/detail']" [queryParams]="{id: item}">The Threat of Donald Trump 2.0 Is Beginning to Emerge</a>
                             </h2>
                         </div>
                         <div>

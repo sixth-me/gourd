@@ -30,6 +30,7 @@ import { TrendingComponent } from './component/trending/trending.component';
 import { NewComponent } from './component/new/new.component';
 import { HotspotComponent } from './component/hotspot/hotspot.component';
 import { DetailComponent } from './component/detail/detail.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { DetailComponent } from './component/detail/detail.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatCardModule,
+    HttpClientModule,
     CKEditorModule
   ],
   providers: [],
