@@ -13,14 +13,15 @@ import { HomeComponent } from './component/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MainComponent } from './component/main/main.component';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatIconModule} from "@angular/material/icon";
-import {MatButtonModule} from "@angular/material/button";
-import {MatTableModule} from "@angular/material/table";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatTableModule } from "@angular/material/table";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { EditorComponent } from './component/editor/editor.component';
@@ -31,6 +32,10 @@ import { NewComponent } from './component/new/new.component';
 import { HotspotComponent } from './component/hotspot/hotspot.component';
 import { DetailComponent } from './component/detail/detail.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ArcivesComponent } from './component/arcives/arcives.component';
+import { AlbumComponent } from './component/album/album.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     TrendingComponent,
     NewComponent,
     HotspotComponent,
-    DetailComponent
+    DetailComponent,
+    ArcivesComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatExpansionModule,
     MatDatepickerModule,
     MatFormFieldModule,
+    MatPaginatorModule,
     MatCardModule,
+    MatSelectModule,
+    MatCheckboxModule,
     HttpClientModule,
     CKEditorModule
   ],

@@ -13,6 +13,48 @@ export class EditorComponent implements OnInit {
   public Editor = ClassicEditor;
 
   public Config = {
+    toolbar: {
+      items: [
+        'heading',
+        '|',
+        'fontfamily',
+        'fontsize',
+        '|',
+        'alignment',
+        '|',
+        'fontColor',
+        'fontBackgroundColor',
+        '|',
+        'bold',
+        'italic',
+        'strikethrough',
+        'underline',
+        'subscript',
+        'superscript',
+        '|',
+        'link',
+        '|',
+        'outdent',
+        'indent',
+        '|',
+        'bulletedList',
+        'numberedList',
+        'todoList',
+        '|',
+        'code',
+        'codeBlock',
+        '|',
+        'insertTable',
+        '|',
+        'uploadImage',
+        'blockQuote',
+        'codeBlock',
+        '|',
+        'undo',
+        'redo'
+      ],
+      shouldNotGroupWhenFull: true
+    },
     ckfinder: {
       uploadUrl: "http://localhost:8090/Floyd/attachment/uploadImage.do"
     }
