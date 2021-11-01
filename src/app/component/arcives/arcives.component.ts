@@ -10,6 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ArcivesComponent implements AfterViewInit {
 
+  keywords = '';
+
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);

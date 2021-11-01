@@ -1,4 +1,13 @@
 <div class="mat-elevation-z8">
+    <div class="form-inline">
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text" [(ngModel)]="keywords">
+            <button *ngIf="keywords" matSuffix mat-icon-button aria-label="Clear" (click)="keywords =''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
     <table mat-table [dataSource]="dataSource">
 
         <!-- No Data -->

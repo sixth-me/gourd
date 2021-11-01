@@ -31,12 +31,13 @@ import { TrendingComponent } from './component/trending/trending.component';
 import { NewComponent } from './component/new/new.component';
 import { HotspotComponent } from './component/hotspot/hotspot.component';
 import { DetailComponent } from './component/detail/detail.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ArcivesComponent } from './component/arcives/arcives.component';
 import { AlbumComponent } from './component/album/album.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatInputModule } from '@angular/material/input';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +78,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     MatCheckboxModule,
     HttpClientModule,
-    CKEditorModule
+    CKEditorModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
